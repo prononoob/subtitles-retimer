@@ -189,9 +189,9 @@ class TimeFormatter:
 
 def main():
     r = Retimer()
-    r.setInputPath('C:/Users/lolle/Desktop/miniprojects/subtitles/Final.Destination.3.2006.1080p.Bluray.x264.anoXmous_eng.srt')
-    r.setOutputPath('C:/Users/lolle/Desktop/miniprojects/subtitles/')
-    r.read(120, False)
+    r.setInputPath('path/to/file')
+    r.setOutputPath('path/to/output/dir')
+    r.read(delay, Forward=True)
 
 
 if __name__ == '__main__':
