@@ -79,7 +79,7 @@ class ForwardItemFormattingStrategy(ItemFormattingStrategy):
         return str(hour + segment)
     
     def finalFormat(self, hour: str, minute: str, second: str, miliseconds: str) -> str:
-        return f'{hour}:{minute}:{second}:{miliseconds}'
+        return f'{hour}:{minute}:{second},{miliseconds}'
 
 
 class BackwardItemFormattingStrategy(ItemFormattingStrategy):
@@ -123,8 +123,8 @@ class BackwardItemFormattingStrategy(ItemFormattingStrategy):
                 hour = '-0' + hour
             elif len(hour) == 2 and not hour[0].isnumeric():
                 hour = '-0' + hour[-1]
-            return f'{hour}:{minute}:{second}:{miliseconds}'
-        return f'{hour}:{minute}:{second}:{miliseconds}'
+            return f'{hour}:{minute}:{second},{miliseconds}'
+        return f'{hour}:{minute}:{second},{miliseconds}'
 
 
 class TimeFormatter:
@@ -189,9 +189,9 @@ class TimeFormatter:
 
 def main():
     r = Retimer()
-    r.setInputPath('path/to/file')
-    r.setOutputPath('path/to/output/dir')
-    r.read(delay, Forward=True)
+    r.setInputPath('path/to/file.srt')
+    r.setOutputPath('path/to/output/folder/')
+    r.read(120, False)
 
 
 if __name__ == '__main__':
